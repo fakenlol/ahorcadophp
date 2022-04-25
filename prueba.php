@@ -173,26 +173,6 @@ $partidas = new partidas();
 $partidas->jugar($jugador, 10);
 
 /*
-
 Nombre: Facundo
 Apellido: Ferrari
-
-Nota:
-
-    Hola profesor, este es el programa de la prueba. La verdad es que ni me gaste en mirar las fotos de la prueba mia porque
-siento que en el examen me puse nervioso y no podia pensar una estrategia para resolverlo. Por lo tanto tarde tanto que no pude
-escribir un codigo que hiciera sentido en el papel. Ademas no probarlo en computadora es algo que tambien me pone un poco nervioso.
-    En fin, Esta vez pude hacer el programa como yo queria. Espero que este bien y cumpla con la consigna. Se que hay cosas que no
-pedia comop la clase partidas. Pero fue mi manera de resolver un poco mas formal el tema de poder hacer que haya varias jugadas y
-de "limpiar" la memoria del jugador para que que vuelva a repetir las letras ya dichas pero en otra partida.
-    Ademas lo que hice fue que le puedas indicar una cantidad de oportunidades que le das al jugador para poder resolver la palabra
-o sino toma una por default con el construct. Tambien le agregue para que se pueda indicar una cantidad de partidas deseadas que
-juegue el jugador. Tambien agregue que si le estas pasando por parametro un jugador avanzado, indicarle a la funcion con un 1 asi
-se limpia la memoria. Por default es 0. Asi acepta jugadores principiantes e intermedios que son los que no tienen esta funcionalidad
-de recordar las letras que ya fueron dichas.
-
-No es para agrandarme ni nada similar porque no soy quien para hacerlo. Simplemente quiero mencionar que lo hice sin buscar nada en
-Google. Esto lo digo porque nos pediste que te seamos sinceros de si buscamos en google soluciones o de si nos copiamos de alguien.
-Pero la verdad es que no. Saludos.
-
 */
