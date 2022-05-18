@@ -182,4 +182,6 @@ $partidas->jugar(10,0,1);
 /*
 Nombre: Facundo
 Apellido: Ferrari
+
+V2.0 --> Ahora se puede crear un jugador distinto dependiendo de el input que le demos a la funcion Jugar. Un input que va del 1 al 3 dependiendo de el tipo de jugador que quiera crear. Por lo tanto le corresponde el 1 al tipo de jugador Principiante, el 2 al jugador Intermedio y el 3 al jugador Avanzado. Esta nueva funcionalidad se implemento para una mejor experiencia de juego. Asi no se tendra que crear una instancia nueva para cada tipo de jugador.
 */
