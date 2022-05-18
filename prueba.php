@@ -149,18 +149,26 @@ class JugadorAvanzado implements Jugador{
 class partidas{
     public $oportunidades;
     public $esAvanzado;
+    public $jugador;
 
     public function __construct(int $opor=50,int $esAvanzado=0){
         $this->oportunidades = $opor;
         $this->esAvanzado = $esAvanzado;
     }
 
-    public function jugar(Jugador $jugador, int $partidas, int $esAvanzado){
+    public function jugar(int $partidas, int $esAvanzado,int $tipoJugador){
         
+        if($tipoJugador == 1){
+            $this->jugador = new JugadorPrincipiante();
+        }elseif($tipoJugador == 2){
+            $this->jugador = new JugadorIntermedio();
+        }elseif($tipoJugador == 3){
+            $this->jugador = new JugadorAvanzado();
+        }
         for($i = 0; $i < $partidas; $i++){
             $juego = new Juego();
             $tablero = new Ahorcado();
-            print($juego->jugar($tablero, $jugador, $this->oportunidades));
+            print($juego->jugar($tablero, $this->jugador, $this->oportunidades));
             if($esAvanzado == 1){
                 $jugador->limpiarMemoria();
             }
@@ -168,9 +176,8 @@ class partidas{
     }
 }
 
-$jugador = new JugadorIntermedio();
 $partidas = new partidas();
-$partidas->jugar($jugador, 10);
+$partidas->jugar(10,0,1);
 
 /*
 Nombre: Facundo
