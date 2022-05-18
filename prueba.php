@@ -12,7 +12,7 @@ interface Tablero {
 }
 
 class juego {
-    public function jugar(Tablero $tablero, Jugador $jugador, int $intentos){
+    public function jugar(string $nombre,Tablero $tablero, Jugador $jugador, int $intentos){
 
         echo $tablero->mostrarTablero() . "\n\n";
 
@@ -21,12 +21,12 @@ class juego {
             $letra = $jugador->sugerirLetra($partida);
             $tablero->intentarLetra($letra);
             if($tablero->palabraAdivinada() == TRUE){
-                return "El jugador gano, la palabra secreta era: " . $tablero->palabraSecretaPublica . "\n";
+                return $nombre . " gano, la palabra secreta era: " . $tablero->palabraSecretaPublica . "\n";
             }
             $intentos--;
         }while($intentos != -1);
 
-        return "El jugador perdio, la palabra secreta era: " . $tablero->palabraSecretaPublica  . "\n";
+        return $nombre . " perdio, la palabra secreta era: " . $tablero->palabraSecretaPublica  . "\n";
     }
 
     public function practicar (Tablero $tablero, Jugador $jugador){
@@ -37,7 +37,7 @@ class juego {
             $letra = $jugador->sugerirLetra($partida);
             $tablero->intentarLetra($letra);
             if($tablero->palabraAdivinada() == TRUE){
-                return "El jugador gano, la palabra secreta era: " . $tablero->palabraSecretaPublica . "\n";
+                return $nombre . " gano, la palabra secreta era: " . $tablero->palabraSecretaPublica . "\n";
             }
         }while(1!=0);
     }
@@ -156,7 +156,7 @@ class partidas{
         $this->esAvanzado = $esAvanzado;
     }
 
-    public function jugar(int $partidas, int $esAvanzado,int $tipoJugador){
+    public function jugar(string $nombre,int $partidas, int $esAvanzado,int $tipoJugador){
         
         if($tipoJugador == 1){
             $this->jugador = new JugadorPrincipiante();
@@ -168,16 +168,16 @@ class partidas{
         for($i = 0; $i < $partidas; $i++){
             $juego = new Juego();
             $tablero = new Ahorcado();
-            print($juego->jugar($tablero, $this->jugador, $this->oportunidades));
+            print($juego->jugar($nombre,$tablero, $this->jugador, $this->oportunidades));
             if($esAvanzado == 1){
-                $jugador->limpiarMemoria();
+                $this->jugador->limpiarMemoria();
             }
         }
     }
 }
 
 $partidas = new partidas();
-$partidas->jugar(10,0,1);
+$partidas->jugar("Juan",10,1,3);
 
 /*
 Nombre: Facundo
